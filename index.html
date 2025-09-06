@@ -1,452 +1,438 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>Pastel Envelopes — Mini Cash Pockets</title>
-<style>
-  :root {
-    --bg: #fffdfb;
-    --card: #ffffff;
-    --muted: #6b7280;
-    --text: #1b1b1b;
-    --shadow: 0 6px 18px rgba(16,24,40,0.06);
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Pastel Envelopes — Mini Cash Pockets</title>
+  <style>
+    :root {
+      --bg: #fffdfb;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --text: #1b1b1b;
+      --shadow: 0 6px 18px rgba(16,24,40,0.06);
 
-    /* Your palette */
-    --col-1: #EDD9BE;
-    --col-2: #FAC1B5;
-    --col-3: #C59FBE;
-    --col-4: #F283AE;
-    --col-5: #98B8B9;
-    --col-6: #C6C870;
-  }
+      /* Your pastel palette */
+      --col-1: #EDD9BE;
+      --col-2: #FAC1B5;
+      --col-3: #C59FBE;
+      --col-4: #F283AE;
+      --col-5: #98B8B9;
+      --col-6: #C6C870;
+    }
 
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(180deg, var(--bg) 0%, #fff 100%);
-    color: var(--text);
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-  }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, #fff 100%);
+      color: var(--text);
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  h1, .title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    margin: 0;
-  }
+    h1, .title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      margin: 0;
+    }
 
-  .small, .muted, .btn, .amt, .envFooter {
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
+    .small, .muted, .btn, .amt, .envFooter {
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
 
-  .wrap {max-width:920px;margin:18px auto;padding:14px;display:grid;grid-template-columns:1fr;gap:12px}
-  .top {display:flex;justify-content:space-between;align-items:center;gap:12px}
-  .small {font-size:13px;color:var(--muted)}
-  .panel {background:var(--card);border-radius:14px;padding:12px;box-shadow:var(--shadow)}
+    .wrap {
+      max-width:920px;
+      margin:18px auto;
+      padding:14px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+    }
 
-  .input {padding:8px;border-radius:10px;border:1px solid rgba(15,23,36,0.06);flex:1}
-  .btn {background:#1b1b1b;color:white;padding:8px 10px;border-radius:10px;border:none;font-weight:600;cursor:pointer}
-  .btn.ghost {background:transparent;color:var(--text);border:1px solid rgba(15,23,36,0.06)}
+    .top {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+    }
 
-  .grid {display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
-  .env {border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px;align-items:start;min-height:120px}
-  .env .amt {font-weight:800;font-size:16px}
-  .donutWrap{width:64px;height:64px;flex:0 0 64px}
-  .smallBtn{padding:6px 8px;border-radius:8px;border:0;background:transparent;cursor:pointer}
-  .muted{color:var(--muted);font-size:13px}
+    .small { font-size:13px; color:var(--muted); }
 
-  /* Backgrounds using your palette */
-  .bg-1 {background:linear-gradient(180deg,var(--col-1),#fff);}
-  .bg-2 {background:linear-gradient(180deg,var(--col-2),#fff);}
-  .bg-3 {background:linear-gradient(180deg,var(--col-3),#fff);}
-  .bg-4 {background:linear-gradient(180deg,var(--col-4),#fff);}
-  .bg-5 {background:linear-gradient(180deg,var(--col-5),#fff);}
-  .bg-6 {background:linear-gradient(180deg,var(--col-6),#fff);}
-  .bg-debt{background:linear-gradient(180deg,#fff3e6,#fff)}
+    .panel {
+      background:var(--card);
+      border-radius:14px;
+      padding:12px;
+      box-shadow:var(--shadow);
+    }
 
-  footer{font-size:12px;color:var(--muted);text-align:center;margin-top:8px}
-</style>
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#C59FBE">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    .input {
+      padding:8px;
+      border-radius:10px;
+      border:1px solid rgba(15,23,36,0.06);
+      flex:1;
+    }
+
+    .btn {
+      background:#1b1b1b;
+      color:white;
+      padding:8px 10px;
+      border-radius:10px;
+      border:none;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .btn.ghost {
+      background:transparent;
+      color:var(--text);
+      border:1px solid rgba(15,23,36,0.06);
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+      gap:10px;
+    }
+
+    .env {
+      border-radius:12px;
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      min-height:auto;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      background-clip: padding-box;
+    }
+
+    .env .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .env .title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 14px;
+      margin: 0;
+      white-space: normal;
+      overflow-wrap: break-word;
+    }
+
+    .amt-container {
+      text-align:right;
+      min-width:70px;
+    }
+
+    .env .amt { font-weight:800; font-size:16px; }
+
+    .donutWrap {
+      flex: 0 0 64px;
+      width: 64px;
+      height: 64px;
+    }
+
+    .smallBtn {
+      padding:6px 8px;
+      border-radius:8px;
+      border:0;
+      background:transparent;
+      cursor:pointer;
+    }
+
+    .muted {
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* Backgrounds using pastel palette */
+    .bg-1 {background:linear-gradient(180deg,var(--col-1),#fff);}
+    .bg-2 {background:linear-gradient(180deg,var(--col-2),#fff);}
+    .bg-3 {background:linear-gradient(180deg,var(--col-3),#fff);}
+    .bg-4 {background:linear-gradient(180deg,var(--col-4),#fff);}
+    .bg-5 {background:linear-gradient(180deg,var(--col-5),#fff);}
+    .bg-6 {background:linear-gradient(180deg,var(--col-6),#fff);}
+    .bg-debt {background:linear-gradient(180deg,#fff3e6,#fff);}
+
+    footer {
+      font-size:12px;
+      color:var(--muted);
+      text-align:center;
+      margin-top:8px;
+    }
+  </style>
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#C59FBE">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 </head>
 <body>
-<div class="wrap">
-  <div>
-    <div class="top">
-      <div>
-        <h1>Pastel Envelopes</h1>
-        <div class="small">Digital cash envelope system — local only</div>
-      </div>
-      <div class="small">Available: <strong id="available">$0.00</strong></div>
-    </div>
-
-    <div class="panel" style="margin-top:12px;">
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <input id="incomeInput" class="input" placeholder="Add income (e.g. 450)" type="number" />
-        <button id="addIncome" class="btn">Add Income</button>
-        <button id="exportBtn" class="btn ghost">Export</button>
-        <input id="importFile" type="file" accept="application/json" style="display:none"/>
-        <button id="importBtn" class="btn ghost">Import</button>
-      </div>
-      <div style="margin-top:10px" class="small muted">Tip: Add income, then allocate to envelopes by tapping an envelope and using Allocate.</div>
-    </div>
-
-    <div class="panel" style="margin-top:10px;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-        <div><strong>Envelopes</strong></div>
-        <div class="small muted">Tap an envelope to open controls</div>
-      </div>
-
-      <div id="envelopeGrid" class="grid"></div>
-    </div>
-
-    <div class="panel" style="margin-top:10px;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-        <div><strong>Transactions</strong></div>
-        <div class="small muted">Recent</div>
-      </div>
-      <div id="txnList" style="max-height:220px;overflow:auto"></div>
-    </div>
-
-    <footer>LocalStorage-only. Export JSON to backup. Add to Home Screen for quick access.</footer>
-  </div>
-
-  <div class="sidebar panel">
-    <div id="details">
-      <div id="selectedName" style="font-weight:800">Select an envelope</div>
-      <div id="selectedTarget" class="muted" style="margin-bottom:8px">—</div>
-
-      <div style="display:flex;gap:8px;margin-bottom:8px">
-        <input id="allocAmt" class="input" type="number" placeholder="Allocate from Available" />
-        <button id="allocBtn" class="btn">Allocate</button>
-      </div>
-
-      <div style="display:flex;gap:8px;margin-bottom:8px">
-        <input id="expenseAmt" class="input" type="number" placeholder="Add expense (positive)" />
-        <input id="expenseNote" class="input" type="text" placeholder="Note (e.g. groceries)" />
-        <button id="expenseBtn" class="btn">Spend</button>
-      </div>
-
-      <div style="display:flex;gap:8px;margin-bottom:10px">
-        <input id="transferTo" class="input" placeholder="Transfer to envelope name" />
-        <input id="transferAmt" class="input" type="number" placeholder="Amount" style="width:90px"/>
-        <button id="transferBtn" class="btn ghost">Transfer</button>
-      </div>
-
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <button id="clearBtn" class="btn ghost">Clear Envelope</button>
-        <button id="setTargetBtn" class="btn ghost">Set Target</button>
-      </div>
-
-      <div style="height:8px"></div>
-      <div class="small muted">Quick tips:</div>
-      <ul class="small muted">
-        <li>Allocate income, then spend from envelopes.</li>
-        <li>Export before major changes.</li>
-        <li>Tap envelope colors to open.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<script>
-/* Pastel Envelopes — single-file app (localStorage) */
-/* Data model:
-  state = {
-    available: number,
-    envelopes: [{id,name,balance,target,colorClass}],
-    txns: [{id,date,envId,amount,note,type}] 
-  }
-*/
-
-const KEY = 'pastel_envelopes_v1';
-
-const DEFAULT = {
-  available: 2100,
-  envelopes: [
-    {id:'groceries', name:'Groceries', balance:110, target:300, color:'bg-1'},
-    {id:'gas', name:'Gas', balance:30, target:120, color:'bg-2'},
-    {id:'spend', name:'Spending', balance:50, target:200, color:'bg-3'},
-    {id:'rent', name:'Rent (this month)', balance:650, target:650, color:'bg-debt'},
-    {id:'utilities', name:'Utilities (this month)', balance:75, target:75, color:'bg-2'},
-    {id:'future_rent', name:'Next Rent (future)', balance:0, target:650, color:'bg-4'},
-    {id:'cc', name:'Credit Card (debt)', balance:132, target:800, color:'bg-debt'}
-  ],
-  txns: []
-};
-
-let state = load() || DEFAULT;
-let selected = null;
-
-/* persistence */
-function save(){
-  localStorage.setItem(KEY, JSON.stringify(state));
-  renderAll();
-}
-function load(){
-  try { const r = localStorage.getItem(KEY); return r ? JSON.parse(r) : null; } catch(e){return null;}
-}
-
-/* helpers */
-const money = n => '$' + Number(n||0).toFixed(2);
-const uid = (p='id') => p + '_' + Math.random().toString(36).slice(2,9);
-
-/* render functions */
-function renderAll(){
-  document.getElementById('available').textContent = money(state.available);
-  renderGrid();
-  renderTxns();
-  renderDetails(selected);
-}
-
-function renderGrid(){
-  const grid = document.getElementById('envelopeGrid');
-  grid.innerHTML = '';
-  state.envelopes.forEach(env=>{
-    const el = document.createElement('div');
-    el.className = 'env ' + (env.color||'bg-1');
-    el.style.boxShadow = 'var(--shadow)';
-    el.innerHTML = `
-      <div style="display:flex;justify-content:space-between;width:100%;align-items:center">
+  <div class="wrap">
+    <div>
+      <div class="top">
         <div>
-          <div class="title">${env.name}</div>
-          <div class="muted" style="font-size:12px">Target ${money(env.target)}</div>
+          <h1>Pastel Envelopes</h1>
+          <div class="small">Digital cash envelope system — local only</div>
         </div>
-        <div style="text-align:right">
-          <div class="amt">${money(env.balance)}</div>
-          <div class="muted" style="font-size:12px">Left ${money(Math.max(0, env.target - env.balance))}</div>
-        </div>
+        <div class="small">Available: <strong id="available">$0.00</strong></div>
       </div>
-      <div style="display:flex;gap:10px;align-items:center;width:100%;margin-top:8px">
-        <div class="donutWrap">${doughnutSVG(env)}</div>
-        <div class="spacer" style="display:flex;flex-direction:column;gap:6px">
-          <div style="display:flex;gap:6px">
-            <button class="smallBtn" data-act="minus" data-id="${env.id}">−</button>
-            <button class="smallBtn" data-act="plus" data-id="${env.id}">+</button>
-            <button class="smallBtn" data-act="alloc" data-id="${env.id}">Allocate</button>
+
+      <div class="panel" style="margin-top:12px;">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <input id="incomeInput" class="input" placeholder="Add income (e.g. 450)" type="number" />
+          <button id="addIncome" class="btn">Add Income</button>
+          <button id="exportBtn" class="btn ghost">Export</button>
+          <input id="importFile" type="file" accept="application/json" style="display:none"/>
+          <button id="importBtn" class="btn ghost">Import</button>
+        </div>
+        <div style="margin-top:10px" class="small muted">Tip: Add income, then allocate to envelopes by tapping an envelope and using Allocate.</div>
+      </div>
+
+      <div class="panel" style="margin-top:10px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <div><strong>Envelopes</strong></div>
+          <div class="small muted">Tap an envelope to open controls</div>
+        </div>
+        <div id="envelopeGrid" class="grid"></div>
+      </div>
+
+      <div class="panel" style="margin-top:10px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <div><strong>Transactions</strong></div>
+          <div class="small muted">Recent</div>
+        </div>
+        <div id="txnList" style="max-height:220px;overflow:auto"></div>
+      </div>
+
+      <footer>LocalStorage-only. Export JSON to backup. Add to Home Screen for quick access.</footer>
+    </div>
+
+    <div class="sidebar panel">
+      <div id="details">
+        <div id="selectedName" style="font-weight:800">Select an envelope</div>
+        <div id="selectedTarget" class="muted" style="margin-bottom:8px">—</div>
+
+        <div style="display:flex;gap:8px;margin-bottom:8px">
+          <input id="allocAmt" class="input" type="number" placeholder="Allocate from Available" />
+          <button id="allocBtn" class="btn">Allocate</button>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-bottom:8px">
+          <input id="expenseAmt" class="input" type="number" placeholder="Add expense (positive)" />
+          <input id="expenseNote" class="input" type="text" placeholder="Note (e.g. groceries)" />
+          <button id="expenseBtn" class="btn">Spend</button>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-bottom:10px">
+          <input id="transferTo" class="input" placeholder="Transfer to envelope name" />
+          <input id="transferAmt" class="input" type="number" placeholder="Amount" style="width:90px"/>
+          <button id="transferBtn" class="btn ghost">Transfer</button>
+        </div>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button id="clearBtn" class="btn ghost">Clear Envelope</button>
+          <button id="setTargetBtn" class="btn ghost">Set Target</button>
+        </div>
+
+        <div style="height:8px"></div>
+        <div class="small muted">Quick tips:</div>
+        <ul class="small muted">
+          <li>Allocate income, then spend from envelopes.</li>
+          <li>Export before major changes.</li>
+          <li>Tap envelope colors to open.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ---------- APP JS ---------- */
+    const KEY = 'pastel_envelopes_v1';
+    const DEFAULT = {
+      available: 2100,
+      envelopes: [
+        {id:'groceries', name:'Groceries', balance:110, target:300, color:'bg-1'},
+        {id:'gas', name:'Gas', balance:30, target:120, color:'bg-2'},
+        {id:'spend', name:'Spending', balance:50, target:200, color:'bg-3'},
+        {id:'rent', name:'Rent (this month)', balance:650, target:650, color:'bg-debt'},
+        {id:'utilities', name:'Utilities (this month)', balance:75, target:75, color:'bg-2'},
+        {id:'future_rent', name:'Next Rent (future)', balance:0, target:650, color:'bg-4'},
+        {id:'cc', name:'Credit Card (debt)', balance:132, target:800, color:'bg-debt'}
+      ],
+      txns: []
+    };
+    let state = JSON.parse(localStorage.getItem(KEY)) || DEFAULT;
+    let selected = null;
+
+    function save() { localStorage.setItem(KEY, JSON.stringify(state)); renderAll(); }
+    const money = n => '$' + Number(n||0).toFixed(2);
+    const uid = (p='id') => p + '_' + Math.random().toString(36).slice(2,9);
+
+    function renderAll() {
+      document.getElementById('available').textContent = money(state.available);
+      renderGrid(); renderTxns(); renderDetails(selected);
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById('envelopeGrid'); grid.innerHTML = '';
+      state.envelopes.forEach(env => {
+        const el = document.createElement('div');
+        el.className = 'env ' + (env.color||'bg-1');
+        el.style.boxShadow = 'var(--shadow)';
+        el.innerHTML = `
+          <div class="header">
+            <div>
+              <div class="title">${env.name}</div>
+              <div class="muted" style="font-size:12px">Target ${money(env.target)}</div>
+            </div>
+            <div class="amt-container">
+              <div class="amt">${money(env.balance)}</div>
+              <div class="muted" style="font-size:12px">Left ${money(Math.max(0, env.target - env.balance))}</div>
+            </div>
           </div>
-          <div class="muted" style="font-size:12px">Tap envelope to open controls</div>
-        </div>
-      </div>
-    `;
-    el.addEventListener('click',(e)=>{
-      // if clicked on inner buttons, ignore the bubble actions
-      if(e.target && (e.target.dataset && e.target.dataset.act)) return;
-      selected = env.id;
-      renderDetails(env.id);
+          <div style="display:flex;gap:10px;align-items:center;width:100%;margin-top:8px">
+            <div class="donutWrap">${doughnutSVG(env)}</div>
+            <div class="spacer" style="display:flex;flex-direction:column;gap:6px">
+              <div style="display:flex;gap:6px">
+                <button class="smallBtn" data-act="minus" data-id="${env.id}">−</button>
+                <button class="smallBtn" data-act="plus" data-id="${env.id}">+</button>
+                <button class="smallBtn" data-act="alloc" data-id="${env.id}">Allocate</button>
+              </div>
+              <div class="muted" style="font-size:12px">Tap envelope to open controls</div>
+            </div>
+          </div>
+        `;
+        el.addEventListener('click', e => {
+          if(e.target && (e.target.dataset && e.target.dataset.act)) return;
+          selected = env.id; renderDetails(env.id);
+        });
+        grid.appendChild(el);
+
+        // delegated buttons
+        el.querySelectorAll('.smallBtn').forEach(btn => {
+          btn.addEventListener('click', e => {
+            e.stopPropagation();
+            const id = btn.dataset.id; const env = state.envelopes.find(x=>x.id===id);
+            const act = btn.dataset.act;
+            if(act==='plus') modifyEnvelope(env.id,5);
+            if(act==='minus') modifyEnvelope(env.id,-5);
+            if(act==='alloc'){ selected = env.id; renderDetails(env.id);
+              const v = prompt('Allocate amount from Available to "'+env.name+'":','50');
+              if(v) allocate(env.id, Number(v));
+            }
+          });
+        });
+      });
+    }
+
+    function doughnutSVG(env){
+      const size = 64, r = 22;
+      const c = 2*Math.PI*r;
+      const pct = env.target>0 ? Math.max(0, Math.min(1, env.balance/env.target)) : 0;
+      const filled = Math.round(pct*c);
+      const rem = c-filled;
+      const color = env.balance>=env.target?'#47c98a':'#7aa2ff';
+      const remColor = 'rgba(15,23,36,0.06)';
+      return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+        <g transform="translate(${size/2},${size/2})">
+          <circle r="${r}" fill="transparent" stroke="${remColor}" stroke-width="10" />
+          <circle r="${r}" fill="transparent" stroke="${color}" stroke-width="10"
+            stroke-dasharray="${filled} ${rem}" stroke-linecap="round" transform="rotate(-90)" />
+          <text x="0" y="4" text-anchor="middle" font-size="11" fill="#0f1724">${Math.round(pct*100)}%</text>
+        </g>
+      </svg>`;
+    }
+
+    function renderDetails(id){
+      const selName = document.getElementById('selectedName');
+      const selTarget = document.getElementById('selectedTarget');
+      if(!id){ selName.textContent='Select an envelope'; selTarget.textContent='—'; return; }
+      const env = state.envelopes.find(e=>e.id===id); if(!env) return;
+      selName.textContent = env.name;
+      selTarget.textContent = `Balance ${money(env.balance)} • Target ${money(env.target)}`;
+      document.getElementById('allocAmt').value='';
+      document.getElementById('expenseAmt').value='';
+      document.getElementById('expenseNote').value='';
+      document.getElementById('transferTo').value='';
+      document.getElementById('transferAmt').value='';
+    }
+
+    function recordTxn(envId,amt,note,type){
+      state.txns.push({id:uid('t'),date:new Date().toISOString(),envId,amount:amt,note,type});
+      if(state.txns.length>500) state.txns = state.txns.slice(-500);
+      save();
+    }
+
+    function renderTxns(){
+      const el = document.getElementById('txnList'); el.innerHTML='';
+      const recent = state.txns.slice().reverse().slice(0,80);
+      recent.forEach(tx=>{
+        const env = state.envelopes.find(e=>e.id===tx.envId);
+        const div = document.createElement('div');
+        div.style.display='flex'; div.style.justifyContent='space-between'; div.style.marginBottom='6px';
+        div.innerHTML = `<div style="font-size:13px"><strong>${env?env.name:'—'}</strong>
+          <span class="muted" style="font-size:12px;margin-left:6px">${tx.note||''}</span></div>
+          <div style="font-weight:700;color:${tx.amount<0? '#ff6b6b':'#2f855a'}">${tx.amount<0?'':'+'}${money(Math.abs(tx.amount))}</div>`;
+        el.appendChild(div);
+      });
+    }
+
+    function addIncome(){ const v=Number(document.getElementById('incomeInput').value||0);
+      if(v<=0) return alert('Enter positive income'); state.available+=v; recordTxn(null,v,'Income','income'); document.getElementById('incomeInput').value=''; save();
+    }
+    function allocate(envId,amt){ amt=Number(amt||0); if(amt<=0)return alert('Enter positive amount');
+      if(amt>state.available)return alert('Not enough Available cash'); const env=state.envelopes.find(e=>e.id===envId);
+      env.balance+=amt; state.available-=amt; recordTxn(envId,amt,'Allocation','allocation'); save();
+    }
+    function spend(envId,amt,note){ amt=Number(amt||0); if(amt<=0)return alert('Enter positive amount'); const env=state.envelopes.find(e=>e.id===envId);
+      if(!env)return alert('Select envelope first'); if(amt>env.balance){if(!confirm('This spend exceeds envelope balance. Continue and allow negative?'))return;}
+      env.balance-=amt; recordTxn(envId,-amt,note||'Expense','expense'); save();
+    }
+    function transfer(fromId,toName,amt){ amt=Number(amt||0); if(amt<=0)return alert('Enter positive amount');
+      const a=state.envelopes.find(e=>e.id===fromId); const b=state.envelopes.find(e=>e.name.toLowerCase()===toName.trim().toLowerCase()||e.id===toName.trim());
+      if(!a||!b)return alert('Source or destination not found (use envelope name)'); if(amt>a.balance)return alert('Not enough in source envelope');
+      a.balance-=amt; b.balance+=amt; recordTxn(fromId,-amt,`Transfer -> ${b.name}`,'transfer'); recordTxn(b.id,amt,`Transfer <- ${a.name}`,'transfer'); save();
+    }
+    function modifyEnvelope(id,delta){ const env=state.envelopes.find(e=>e.id===id); if(!env)return; env.balance+=Number(delta); recordTxn(id,delta,'Quick adjust','adjust'); save(); }
+
+    /* UI wiring */
+    document.getElementById('addIncome').addEventListener('click',addIncome);
+    document.getElementById('allocBtn').addEventListener('click',()=>{ if(!selected)return alert('Select envelope first');
+      const amt=Number(document.getElementById('allocAmt').value||0); allocate(selected,amt);
     });
-    grid.appendChild(el);
-  });
-
-  // attach delegated clicks for plus/minus/allocate within grid
-  grid.querySelectorAll('.smallBtn').forEach(btn=>{
-    btn.addEventListener('click',(e)=>{
-      e.stopPropagation();
-      const id = btn.dataset.id;
-      const env = state.envelopes.find(x=>x.id===id);
-      const act = btn.dataset.act;
-      if(act === 'plus') { modifyEnvelope(env.id, 5); } // quick +5
-      if(act === 'minus') { modifyEnvelope(env.id, -5); }
-      if(act === 'alloc') {
-        selected = env.id; renderDetails(env.id);
-        const v = prompt('Allocate amount from Available to "'+env.name+'":','50');
-        if(v) allocate(env.id, Number(v));
-      }
+    document.getElementById('expenseBtn').addEventListener('click',()=>{ if(!selected)return alert('Select envelope first');
+      const amt=Number(document.getElementById('expenseAmt').value||0); const note=document.getElementById('expenseNote').value||''; spend(selected,amt,note);
     });
-  });
-}
+    document.getElementById('transferBtn').addEventListener('click',()=>{ if(!selected)return alert('Select envelope first');
+      const to=document.getElementById('transferTo').value||''; const amt=Number(document.getElementById('transferAmt').value||0); transfer(selected,to,amt);
+    });
+    document.getElementById('clearBtn').addEventListener('click',()=>{ if(!selected)return alert('Select envelope first');
+      if(!confirm('Clear this envelope balance and records?'))return; const env=state.envelopes.find(e=>e.id===selected); env.balance=0; save();
+    });
+    document.getElementById('setTargetBtn').addEventListener('click',()=>{ if(!selected)return alert('Select envelope first');
+      const env=state.envelopes.find(e=>e.id===selected); const v=Number(prompt('Set new target for '+env.name,env.target||0)||0); env.target=v; save();
+    });
 
-function doughnutSVG(env){
-  const size = 64;
-  const r = 22;
-  const c = 2*Math.PI*r;
-  const pct = env.target>0 ? Math.max(0, Math.min(1, env.balance / env.target)) : 0;
-  const filled = Math.round(pct * c);
-  const rem = c - filled;
-  const color = env.balance >= env.target ? '#47c98a' : '#7aa2ff';
-  const remColor = 'rgba(15,23,36,0.06)';
-  return `
-    <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
-      <g transform="translate(${size/2},${size/2})">
-        <circle r="${r}" fill="transparent" stroke="${remColor}" stroke-width="10" />
-        <circle r="${r}" fill="transparent" stroke="${color}" stroke-width="10" stroke-dasharray="${filled} ${rem}" stroke-linecap="round" transform="rotate(-90)" />
-        <text x="0" y="4" text-anchor="middle" font-size="11" fill="#0f1724">${Math.round(pct*100)}%</text>
-      </g>
-    </svg>
-  `;
-}
+    /* quick export/import */
+    document.getElementById('exportBtn').addEventListener('click',()=>{
+      const data=JSON.stringify(state,null,2); const blob=new Blob([data],{type:'application/json'});
+      const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='pastel_envelopes_backup.json'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+    document.getElementById('importBtn').addEventListener('click',()=>document.getElementById('importFile').click());
+    document.getElementById('importFile').addEventListener('change',(e)=>{
+      const f=e.target.files[0]; if(!f)return; const r=new FileReader();
+      r.onload=(ev)=>{ try{ const obj=JSON.parse(ev.target.result); if(!obj.envelopes)throw new Error('Invalid file'); if(!confirm('Import replaces current data. Proceed?'))return; state=obj; save();
+      }catch(err){ alert('Import error: '+err.message); } }; r.readAsText(f);
+    });
 
-function renderDetails(id){
-  const selName = document.getElementById('selectedName');
-  const selTarget = document.getElementById('selectedTarget');
-  if(!id){
-    selName.textContent = 'Select an envelope';
-    selTarget.textContent = '—';
-    return;
-  }
-  const env = state.envelopes.find(e=>e.id===id);
-  if(!env) return;
-  selName.textContent = env.name;
-  selTarget.textContent = `Balance ${money(env.balance)} • Target ${money(env.target)}`;
-  document.getElementById('allocAmt').value = '';
-  document.getElementById('expenseAmt').value = '';
-  document.getElementById('expenseNote').value = '';
-  document.getElementById('transferTo').value = '';
-  document.getElementById('transferAmt').value = '';
-}
-
-/* transactions */
-function recordTxn(envId,amount,note,type){
-  state.txns.push({id:uid('t'),date:new Date().toISOString(),envId,amount,note,type});
-  // trim to last 200
-  if(state.txns.length>500) state.txns = state.txns.slice(-500);
-  save();
-}
-
-function renderTxns(){
-  const el = document.getElementById('txnList');
-  el.innerHTML = '';
-  const recent = state.txns.slice().reverse().slice(0,80);
-  recent.forEach(tx=>{
-    const env = state.envelopes.find(e=>e.id===tx.envId);
-    const div = document.createElement('div');
-    div.style.display='flex';div.style.justifyContent='space-between';div.style.marginBottom='6px';
-    div.innerHTML = `<div style="font-size:13px"><strong>${env?env.name:'—'}</strong> <span class="muted" style="font-size:12px;margin-left:6px">${tx.note||''}</span></div>
-                     <div style="font-weight:700;color:${tx.amount<0? '#ff6b6b' : '#2f855a'}">${tx.amount<0? '' : '+'}${money(Math.abs(tx.amount))}</div>`;
-    el.appendChild(div);
-  });
-}
-
-/* actions */
-function addIncome(){
-  const v = Number(document.getElementById('incomeInput').value||0);
-  if(v<=0) return alert('Enter positive income');
-  state.available = Number(state.available) + v;
-  recordTxn(null, v, 'Income', 'income');
-  document.getElementById('incomeInput').value = '';
-  save();
-}
-
-function allocate(envId, amt){
-  amt = Number(amt||0);
-  if(amt <= 0) return alert('Enter positive amount');
-  if(amt > state.available) return alert('Not enough Available cash');
-  const env = state.envelopes.find(e=>e.id===envId);
-  env.balance = Number(env.balance) + amt;
-  state.available = Number(state.available) - amt;
-  recordTxn(envId, amt, 'Allocation', 'allocation');
-  save();
-}
-
-function spend(envId, amt, note){
-  amt = Number(amt||0);
-  if(amt <= 0) return alert('Enter positive amount');
-  const env = state.envelopes.find(e=>e.id===envId);
-  if(!env) return alert('Select envelope first');
-  if(amt > env.balance) {
-    if(!confirm('This spend exceeds envelope balance. Continue and allow negative?')) return;
-  }
-  env.balance = Number(env.balance) - amt;
-  recordTxn(envId, -amt, note||'Expense', 'expense');
-  save();
-}
-
-function transfer(fromId, toName, amt){
-  amt = Number(amt||0);
-  if(amt<=0) return alert('Enter positive amount');
-  const a = state.envelopes.find(e=>e.id===fromId);
-  const b = state.envelopes.find(e=>e.name.toLowerCase()===toName.trim().toLowerCase() || e.id===toName.trim());
-  if(!a || !b) return alert('Source or destination not found (use envelope name)');
-  if(amt > a.balance) return alert('Not enough in source envelope');
-  a.balance -= amt;
-  b.balance += amt;
-  recordTxn(fromId, -amt, `Transfer -> ${b.name}`, 'transfer');
-  recordTxn(b.id, amt, `Transfer <- ${a.name}`, 'transfer');
-  save();
-}
-
-function modifyEnvelope(id, delta){
-  const env = state.envelopes.find(e=>e.id===id);
-  if(!env) return;
-  env.balance = Number(env.balance) + Number(delta);
-  recordTxn(id, delta, 'Quick adjust', 'adjust');
-  save();
-}
-
-/* UI wiring */
-document.getElementById('addIncome').addEventListener('click', addIncome);
-document.getElementById('allocBtn').addEventListener('click', ()=> {
-  if(!selected) return alert('Select envelope first');
-  const amt = Number(document.getElementById('allocAmt').value||0);
-  allocate(selected, amt);
-});
-document.getElementById('expenseBtn').addEventListener('click', ()=> {
-  if(!selected) return alert('Select envelope first');
-  const amt = Number(document.getElementById('expenseAmt').value||0);
-  const note = document.getElementById('expenseNote').value||'';
-  spend(selected, amt, note);
-});
-document.getElementById('transferBtn').addEventListener('click', ()=> {
-  if(!selected) return alert('Select envelope first');
-  const to = document.getElementById('transferTo').value||'';
-  const amt = Number(document.getElementById('transferAmt').value||0);
-  transfer(selected, to, amt);
-});
-document.getElementById('clearBtn').addEventListener('click', ()=> {
-  if(!selected) return alert('Select envelope first');
-  if(!confirm('Clear this envelope balance and records? (This will only zero balance, transactions remain)')) return;
-  const env = state.envelopes.find(e=>e.id===selected);
-  env.balance = 0;
-  save();
-});
-document.getElementById('setTargetBtn').addEventListener('click', ()=> {
-  if(!selected) return alert('Select envelope first');
-  const env = state.envelopes.find(e=>e.id===selected);
-  const v = Number(prompt('Set new target for ' + env.name, env.target||0) || 0);
-  env.target = v;
-  save();
-});
-
-/* quick export/import */
-document.getElementById('exportBtn').addEventListener('click', ()=>{
-  const data = JSON.stringify(state, null, 2);
-  const blob = new Blob([data], {type:'application/json'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a'); a.href=url; a.download='pastel_envelopes_backup.json'; document.body.appendChild(a); a.click(); a.remove();
-  URL.revokeObjectURL(url);
-});
-document.getElementById('importBtn').addEventListener('click', ()=> document.getElementById('importFile').click());
-document.getElementById('importFile').addEventListener('change', (e)=> {
-  const f = e.target.files[0];
-  if(!f) return;
-  const r = new FileReader();
-  r.onload = (ev)=>{
-    try{
-      const obj = JSON.parse(ev.target.result);
-      if(!obj.envelopes) throw new Error('Invalid file');
-      if(!confirm('Import replaces current data. Proceed?')) return;
-      state = obj; save();
-    }catch(err){ alert('Import error: ' + err.message); }
-  };
-  r.readAsText(f);
-});
-
-/* init */
-renderAll();
-
-/* expose for debugging if you open console */
-window.PASTEL = { state, save, allocate, spend, transfer, recordTxn };
-
-</script>
-
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').then(()=>console.log('sw registered')).catch(e=>console.warn('sw failed', e));
-}
-</script>
-
+    renderAll();
+    window.PASTEL={state,save,allocate,spend,transfer,recordTxn};
+  </script>
 </body>
 </html>
+
